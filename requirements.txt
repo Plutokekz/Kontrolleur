@@ -1,0 +1,18 @@
+discord.py[voice]
+discord-py-slash-command
+youtube-dl
+sqlalchemy
+crate
+geojson
+PyNaCl
+# tensorflow
+matplotlib
+numpy
+scikit-learn
+opencv-python
+requests
+PyLaTeX
+mutagen
+Pillow~=7.1.2
+riotwatcher
+pytz
