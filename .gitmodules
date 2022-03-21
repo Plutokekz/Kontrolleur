@@ -1,0 +1,3 @@
+[submodule "Music"]
+	path = Music
+	url = git@github.com:Plutokekz/Youtube_Cog.git

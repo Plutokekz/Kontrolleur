@@ -5,7 +5,6 @@ import discord
 from discord import Game
 from discord.ext.commands import Bot
 import os
-from discord_slash import SlashCommand
 
 logging.basicConfig(level=logging.INFO)
 
@@ -16,8 +15,6 @@ BOT_PREFIX = default_config['BotPrefix']
 BOT_ACTIVITY = default_config['Activity']
 
 client = Bot(intents=discord.Intents.all(), command_prefix=BOT_PREFIX, activity=Game(BOT_ACTIVITY))
-
-client.slash = SlashCommand(client)
 
 
 @client.event
@@ -32,9 +29,4 @@ if __name__ == '__main__':
     for extension in modules:
         client.load_extension(extension)
         logging.info(f"Loaded module {extension}")
-    logging.info(client.slash.commands)
     client.run(token)
-
-"""['MusicBackend.Sounds', 'Certificat.LeagueDiplom', 'Random.Coinflip',
-                      'Decode.Decode', 'Calculator.CalculatorModule', 'AI.ImagesDetection.CatOrDog',
-                      'AI.MakeCat.MakeCat', 'FourConnect.CFDmodule']:  # 'AI.ImagesDetection.CatOrDog', 'AI.MakeCat.MakeCat' 'FourConnect.CFDmodule',"""
