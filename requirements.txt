@@ -1,5 +1,6 @@
 discord.py[voice]
 discord-py-slash-command
+
 youtube-dl
 sqlalchemy
 crate
@@ -13,6 +14,12 @@ opencv-python
 requests
 PyLaTeX
 mutagen
-Pillow~=7.1.2
 riotwatcher
 pytz
+arrow==0.17.0
+attrs==18.2.0
+cassiopeia==5.0.1
+datapipelines==1.0.7
+idna==3.3
+merakicommons==1.0.10
+

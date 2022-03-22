@@ -1,3 +1,6 @@
 [submodule "Music"]
 	path = Music
 	url = git@github.com:Plutokekz/Youtube_Cog.git
+[submodule "Diplom/Generator"]
+	path = Diplom/Generator
+	url = git@github.com:Plutokekz/LeagueDiplom.git
