@@ -6,7 +6,8 @@ from discord import Game
 from discord.ext.commands import Bot
 import os
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.WARNING)
+logger = logging.getLogger(__name__)
 
 config = configparser.ConfigParser()
 config.read("config.ini")
@@ -20,7 +21,7 @@ client = Bot(intents=discord.Intents.all(), command_prefix=BOT_PREFIX, activity=
 @client.event
 async def on_ready():
     [(logging.info(server.name), logging.info(server.id)) for server in client.guilds]
-    logging.info("logged in as " + client.user.name)
+    logger.info("logged in as " + client.user.name)
 
 
 if __name__ == '__main__':
@@ -28,5 +29,5 @@ if __name__ == '__main__':
     modules = os.getenv('MODULES').split(",")
     for extension in modules:
         client.load_extension(extension)
-        logging.info(f"Loaded module {extension}")
+        logger.info(f"Loaded module {extension}")
     client.run(token)

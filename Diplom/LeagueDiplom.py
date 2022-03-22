@@ -7,6 +7,8 @@ from discord.ext import commands
 from .Generator.src.FileGenerator import generate_diploma, delete_diploma
 from .Generator.src.LeagueApi import SummonerNotFoundException
 
+logger = logging.getLogger(__name__)
+
 
 class DiplomaMaker(commands.Cog):
 
@@ -19,7 +21,7 @@ class DiplomaMaker(commands.Cog):
             await asyncio.sleep(5)
             delete_diploma(name)
         except SummonerNotFoundException and NotFoundError:
-            logging.info(f"No account for the name {name}")
+            logger.warning(f"No account for the name {name}")
             await context.channel.send(f"Kein Spieler mit dem Namen <{name}> gefunden", delete_after=5)
         await context.message.delete(delay=10)
 
