@@ -17,8 +17,10 @@ class DiplomaMaker(commands.Cog):
         logging.info(f"Generating Pdf for {name}...")
         try:
             path, name = generate_diploma(name)
+            logger.info("sending diplom")
             await context.channel.send(file=discord.File(path))
             await asyncio.sleep(5)
+            logger.info("deleting diplom")
             delete_diploma(name)
         except SummonerNotFoundException and NotFoundError:
             logger.warning(f"No account for the name {name}")

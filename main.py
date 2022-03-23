@@ -6,7 +6,7 @@ from discord import Game
 from discord.ext.commands import Bot
 import os
 
-logging.basicConfig(level=logging.WARNING)
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 config = configparser.ConfigParser()
@@ -20,7 +20,7 @@ client = Bot(intents=discord.Intents.all(), command_prefix=BOT_PREFIX, activity=
 
 @client.event
 async def on_ready():
-    [(logging.info(server.name), logging.info(server.id)) for server in client.guilds]
+    [logger.info(f"Server Name:{server.name}, Server Id: {server.id}") for server in client.guilds]
     logger.info("logged in as " + client.user.name)
 
 
