@@ -1,25 +1,9 @@
 discord.py[voice]
-discord-py-slash-command
-
 youtube-dl
-sqlalchemy
-crate
 geojson
 PyNaCl
 # tensorflow
-matplotlib
-numpy
-scikit-learn
-opencv-python
 requests
-PyLaTeX
-mutagen
-riotwatcher
+cassiopeia
 pytz
-arrow==0.17.0
-attrs==18.2.0
-cassiopeia==5.0.1
-datapipelines==1.0.7
-idna==3.3
-merakicommons==1.0.10
 

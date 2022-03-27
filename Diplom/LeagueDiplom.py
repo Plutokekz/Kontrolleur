@@ -14,10 +14,15 @@ class DiplomaMaker(commands.Cog):
 
     @commands.command(name='diplom')
     async def diplom(self, context, name: str):
+        """
+        Generate a legit League of Legends Diplom
+
+        :param name, name of the summoner
+        """
         logging.info(f"Generating Pdf for {name}...")
         try:
             path, name = generate_diploma(name)
-            logger.info("sending diplom")
+            await asyncio.sleep(5)
             await context.channel.send(file=discord.File(path))
             await asyncio.sleep(5)
             logger.info("deleting diplom")
